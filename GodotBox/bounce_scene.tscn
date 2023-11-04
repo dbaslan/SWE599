@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbp8vf3r0bisf"]
+
+[ext_resource type="PackedScene" uid="uid://bfm7axr3bgqd7" path="res://GodotBox.tscn" id="1_al27v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0khru"]
+size = Vector2(28.9592, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ro23"]
+size = Vector2(2.92031, 175.749)
+
+[node name="Main" type="Node"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.745098, 0.858824, 0, 1)
+
+[node name="GodotBox" parent="." instance=ExtResource("1_al27v")]
+position = Vector2(551, 336)
+
+[node name="Floor" type="StaticBody2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(577.5, 616)
+scale = Vector2(40.16, 1)
+shape = SubResource("RectangleShape2D_0khru")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="ColorRect2" type="ColorRect" parent="Floor"]
+show_behind_parent = true
+top_level = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = 599.0
+offset_right = -9.0
+offset_bottom = 599.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.02427, 0.0800002)
+color = Color(0.368627, 0.0352941, 0.0431373, 1)
+
+[node name="LeftWall2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall2"]
+position = Vector2(15.5, 314)
+scale = Vector2(21.5731, 3.72318)
+shape = SubResource("RectangleShape2D_4ro23")
+
+[node name="ColorRect" type="ColorRect" parent="LeftWall2"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.16, 15.84)
+color = Color(0.37, 0.037, 0.0425499, 1)
+
+[node name="RightWall2" type="StaticBody2D" parent="."]
+position = Vector2(1105, -127)
+scale = Vector2(1, 1.28)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall2"]
+position = Vector2(24, 313.891)
+scale = Vector2(21.5731, 3.72318)
+shape = SubResource("RectangleShape2D_4ro23")
+
+[node name="ColorRect" type="ColorRect" parent="RightWall2"]
+offset_left = -7.0
+offset_top = 80.4688
+offset_right = 33.0
+offset_bottom = 120.469
+scale = Vector2(1.64, 13.4025)
+color = Color(0.37, 0.037, 0.0425499, 1)

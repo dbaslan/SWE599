@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfm7axr3bgqd7"]
+
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_g57mq"]
+[ext_resource type="Texture2D" uid="uid://tow518855b5" path="res://icon.svg" id="2_oes5t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g3y3g"]
+size = Vector2(9.88446, 14.8436)
+
+[node name="GodotBox" type="CharacterBody2D"]
+script = ExtResource("1_g57mq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_oes5t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0.5)
+scale = Vector2(12.5449, 8.28639)
+shape = SubResource("RectangleShape2D_g3y3g")

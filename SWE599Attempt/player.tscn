@@ -1,0 +1,146 @@
+[gd_scene load_steps=20 format=3 uid="uid://bjiafin42u6ni"]
+
+[ext_resource type="Texture2D" uid="uid://cpwvojajlh2mx" path="res://assets/mystic_woods_free_2.1/sprites/characters/player.png" id="1_4hbh1"]
+[ext_resource type="Script" path="res://player.gd" id="1_u21kt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88p3t"]
+atlas = ExtResource("1_4hbh1")
+region = Rect2(0, 432, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_100ad"]
+atlas = ExtResource("1_4hbh1")
+region = Rect2(48, 432, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4ous"]
+atlas = ExtResource("1_4hbh1")
+region = Rect2(96, 432, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26gsy"]
+atlas = ExtResource("1_4hbh1")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2a6xe"]
+atlas = ExtResource("1_4hbh1")
+region = Rect2(48, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5f08"]
+atlas = ExtResource("1_4hbh1")
+region = Rect2(96, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0m3fj"]
+atlas = ExtResource("1_4hbh1")
+region = Rect2(144, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_namks"]
+atlas = ExtResource("1_4hbh1")
+region = Rect2(192, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yj735"]
+atlas = ExtResource("1_4hbh1")
+region = Rect2(240, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jodxa"]
+atlas = ExtResource("1_4hbh1")
+region = Rect2(0, 192, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yamtl"]
+atlas = ExtResource("1_4hbh1")
+region = Rect2(48, 192, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6xug"]
+atlas = ExtResource("1_4hbh1")
+region = Rect2(96, 192, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enb1b"]
+atlas = ExtResource("1_4hbh1")
+region = Rect2(144, 192, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hup2f"]
+atlas = ExtResource("1_4hbh1")
+region = Rect2(192, 192, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmrnv"]
+atlas = ExtResource("1_4hbh1")
+region = Rect2(240, 192, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wyilk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88p3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_100ad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4ous")
+}],
+"loop": true,
+"name": &"die",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26gsy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2a6xe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5f08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0m3fj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_namks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yj735")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jodxa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yamtl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s6xug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_enb1b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hup2f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmrnv")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cdgyn"]
+size = Vector2(17, 23)
+
+[node name="Player" type="CharacterBody2D"]
+texture_filter = 1
+position = Vector2(496, 342)
+scale = Vector2(5.34705, 5.34705)
+motion_mode = 1
+script = ExtResource("1_u21kt")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wyilk")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 6.5)
+shape = SubResource("RectangleShape2D_cdgyn")

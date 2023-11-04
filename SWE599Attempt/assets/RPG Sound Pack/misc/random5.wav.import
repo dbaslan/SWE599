@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://drem0l651phsf"
+path="res://.godot/imported/random5.wav-33e37d837d203476f504b98fd4db011c.sample"
+
+[deps]
+
+source_file="res://assets/RPG Sound Pack/misc/random5.wav"
+dest_files=["res://.godot/imported/random5.wav-33e37d837d203476f504b98fd4db011c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

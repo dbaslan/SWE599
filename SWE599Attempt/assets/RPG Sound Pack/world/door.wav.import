@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ctpvq12e4a1j7"
+path="res://.godot/imported/door.wav-f645cd386d0dc5c769ef6aa5f709944a.sample"
+
+[deps]
+
+source_file="res://assets/RPG Sound Pack/world/door.wav"
+dest_files=["res://.godot/imported/door.wav-f645cd386d0dc5c769ef6aa5f709944a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
