@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://dejj26k21fwqv"]
+
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_1n8wq"]
+[ext_resource type="Texture2D" uid="uid://dx4pkqsw5obeu" path="res://sprites/characters/player.png" id="2_kggrw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_er2mp"]
+radius = 11.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wxf1"]
+atlas = ExtResource("2_kggrw")
+region = Rect2(0, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_web8s"]
+atlas = ExtResource("2_kggrw")
+region = Rect2(48, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ern2b"]
+atlas = ExtResource("2_kggrw")
+region = Rect2(96, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d577q"]
+atlas = ExtResource("2_kggrw")
+region = Rect2(144, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wutpk"]
+atlas = ExtResource("2_kggrw")
+region = Rect2(192, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhx5t"]
+atlas = ExtResource("2_kggrw")
+region = Rect2(240, 144, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1mpn3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wxf1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_web8s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ern2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d577q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wutpk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhx5t")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(278, 165)
+scale = Vector2(1.84, 1.84)
+script = ExtResource("1_1n8wq")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_er2mp")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -8)
+scale = Vector2(1.30435, 1.30435)
+sprite_frames = SubResource("SpriteFrames_1mpn3")
+animation = &"walk"

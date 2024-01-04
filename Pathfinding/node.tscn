@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwcixlkljkxo3"]
+
+[ext_resource type="PackedScene" uid="uid://dejj26k21fwqv" path="res://player.tscn" id="1_nd8oq"]
+[ext_resource type="PackedScene" uid="uid://c0hsp2p3v2slg" path="res://mob.tscn" id="2_wgtvs"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_m12kw"]
+vertices = PackedVector2Array(388, 243, 456, 44, 513, 256, 451, 271, 585, 53, 650, 251, 580, 271, 513, 433, 753, 231, 632, 431, 734, 422, 863, 523, 607, 613, 596, 519, 463, 529, 468, 447, 317, 479, 212, 586, 201, 71, 316, 209, 345, 56, 369, 430, 747, 53, 1043, 444, 934, 508)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(2, 4, 5, 6), PackedInt32Array(6, 7, 3, 2), PackedInt32Array(8, 9, 6, 5), PackedInt32Array(10, 11, 12, 13), PackedInt32Array(13, 12, 14, 15), PackedInt32Array(16, 15, 14, 17), PackedInt32Array(16, 17, 18, 19), PackedInt32Array(19, 18, 20, 0), PackedInt32Array(21, 19, 0), PackedInt32Array(3, 21, 0), PackedInt32Array(8, 5, 22), PackedInt32Array(8, 22, 23, 24)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(345, 56, 388, 243, 456, 44, 513, 256, 585, 53, 650, 251, 747, 53, 1043, 444, 934, 508, 753, 231, 632, 431, 580, 271, 513, 433, 451, 271, 369, 430, 316, 209, 317, 479, 468, 447, 596, 519, 734, 422, 863, 523, 607, 613, 463, 529, 212, 586, 201, 71)])
+
+[node name="Node" type="Node"]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_m12kw")
+
+[node name="Polygon2D" type="Polygon2D" parent="NavigationRegion2D"]
+position = Vector2(1008, 271)
+color = Color(0, 1, 0.2, 1)
+polygon = PackedVector2Array(-259, -211, 38, 171, -73, 235, -253, -39, -375, 160, -428, -4, -496, 160, -560, -7, -639, 155, -691, -60, -691, 203, -538, 176, -411, 248, -276, 150, -143, 248, -399, 339, -547, 256, -795, 316, -807, -202, -666, -216, -621, -36, -551, -234, -492, -16, -423, -220, -356, -27)
+
+[node name="Player" parent="." instance=ExtResource("1_nd8oq")]
+
+[node name="Mob" parent="." instance=ExtResource("2_wgtvs")]
+position = Vector2(266, 346)
+
+[node name="Mob2" parent="." instance=ExtResource("2_wgtvs")]
+position = Vector2(748, 166)

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2w4do4dil5lg"]
+
+[ext_resource type="Script" path="res://Entity.gd" id="1_c63ar"]
+[ext_resource type="Texture2D" uid="uid://ci50nwka53ceg" path="res://sprites/enemyWalking_1.png" id="2_kfn2i"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pock4"]
+radius = 44.0
+height = 124.0
+
+[node name="Entity" type="Node2D"]
+script = ExtResource("1_c63ar")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_kfn2i")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_pock4")
+
+[connection signal="area_entered" from="Area2D" to="." method="area_entered"]

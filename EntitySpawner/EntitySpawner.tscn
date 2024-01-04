@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://dx67h5h8rdxav"]
+
+[ext_resource type="Script" path="res://EntitySpawner.gd" id="1_v6qsi"]
+[ext_resource type="Script" path="res://addons/monitor_overlay/monitor_overlay.gd" id="2_hpyqt"]
+[ext_resource type="Script" path="res://Timer.gd" id="3_wpuhq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_avw7i"]
+
+[node name="Spawner" type="Node2D"]
+script = ExtResource("1_v6qsi")
+
+[node name="Control" type="VBoxContainer" parent="."]
+z_index = 1
+custom_minimum_size = Vector2(300, 0)
+offset_left = 10.0
+offset_top = 11.0
+offset_right = 310.0
+offset_bottom = 61.0
+script = ExtResource("2_hpyqt")
+process = true
+static_memory = true
+nodes = true
+collision_pairs_2d = true
+sampling_rate = 2.0
+
+[node name="Timer" type="Control" parent="."]
+self_modulate = Color(0, 0, 0, 0.47451)
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 1059.0
+offset_top = 19.0
+offset_right = 1099.0
+offset_bottom = 59.0
+grow_horizontal = 0
+script = ExtResource("3_wpuhq")
+
+[node name="Label" type="Label" parent="Timer"]
+offset_right = 40.0
+offset_bottom = 23.0
+label_settings = SubResource("LabelSettings_avw7i")
